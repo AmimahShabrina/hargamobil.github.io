@@ -44,7 +44,7 @@ def predict():
         if output<0:
             return render_template('index.html',prediction_texts="Maaf Anda tidak dapat menjual mobil ini")
         else:
-            return render_template('index.html',prediction_text="Anda dapat menjual mobil di harga {}".format(output))
+            return render_template('index.html',prediction_text="Anda dapat menjual mobil di harga {} lakhs".format(output))
     else:
         return render_template('index.html')
 
