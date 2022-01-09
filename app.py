@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request
-from flask_dance.contrib.github import make_github_blueprint
+from flask import Flask, render_template, request, url_for
+import jsonify
 import requests
 import pickle
 import numpy as np
@@ -7,11 +7,6 @@ import sklearn
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-app.config["SECRET_KEY"]="122121cscw13dcwcwdcdac1321"
-github_blueprint = make_github_blueprint(client_id='33bcb60214d2a002316d'
-                                        client_secret='d1cbaf410987c040c0ec9b841cd6c33cbcd63c38')
-app.register_blueprint(github_blueprint, url_prefix='/amimahshabrina.github.io')
-
 model = pickle.load(open('random_forest_regression_model.pkl', 'rb'))
 
 
