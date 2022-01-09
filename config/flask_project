@@ -4,7 +4,7 @@ server {
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
     }
-    location /static {
-        alias  /home/www/flask_project/static/;
+    location /templates {
+        alias  /home/www/templates/;
     }
 }
